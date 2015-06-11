@@ -6,8 +6,7 @@ body{
 	background-color: rgb(9, 18, 33);
 }
 #gallery{
-	background-color: rgb(9, 18, 33)/*#0c182c*/;
-	padding: 50px 0;
+	padding: 0px;
 }
 
 .navbar-default .navbar-link:hover {
