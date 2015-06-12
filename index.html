@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>33snaps - Photo blog by Ramesh</title>
-    <link rel="icon" href="favicon.ico" type="image/png" sizes="16x16">
+    <link rel="icon" href="favicon.ico">
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" ng-controller="sliderCtrl" ng-keydown="handleLeftRightKeys($event)">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
@@ -74,13 +74,21 @@
     	<div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                	<img src="images/20120325063653_dsc_0367.jpg" class="img-responsive" alt="">
+                	<img src="images/{{currentImagePath}}" class="img-responsive animate-show" alt="" fade-in>
+                	<a class="left carousel-control" ng-click="prev()">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" ng-click="next()">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                	<h4>Dancing</h4>
-                	<span>This pic was taken on my way back to Kanyakumari. It was raining heavily at that time and this little kid is dancing inside the car and saying something without actually saying it. On another note, We missed the sunset because of a sudden rain in Kanyakumari. Avoid trip to Kanyakumari during rainy season as you might miss beautiful Sunrise/Sunsets.</span>
+                	<h4>{{caption}}</h4>
+                	<span>{{description}}</span>
                 </div>
             </div>
         </div>
@@ -102,7 +110,7 @@
                 <div class="col-lg-4">
                     <p>My Gear: Nikon D5100, 18-55mm, 50mm 1.8 <br />
         			Drop me a mail <a href="mailto:33snaps@gmail.com">33snaps@gmail.com</a> for any feedback/queries. <br />
-        			Join my <a href="www.facebook.com/33snaps" target="_blank">FB Page</a> to get the updates.</p>
+        			Join my <a href="http://www.facebook.com/33snaps" target="_blank">FB Page</a> to get the updates.</p>
                 </div>
             </div>
         </div>
@@ -161,6 +169,9 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
+    <!-- AngularJS -->
+    <script src="js/angular.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -175,6 +186,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+    <script src="js/slider.js"></script>
 
 </body>
 

@@ -6,7 +6,7 @@ body{
 	background-color: rgb(9, 18, 33);
 }
 #gallery{
-	padding: 0px;
+	padding-top: 50px;
 }
 
 .navbar-default .navbar-link:hover {
@@ -37,4 +37,27 @@ hr.star-light:after {
 
 footer .footer-above, footer .footer-below{
 	background-color: transparent;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    transition: all linear 0.5s;
+    display: block !important;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
+    opacity: 0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+#gallery .left{
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+#gallery .right{
+	margin-right: 15px;
+	cursor: pointer;
 }
