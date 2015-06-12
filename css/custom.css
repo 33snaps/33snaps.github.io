@@ -61,3 +61,22 @@ footer .footer-above, footer .footer-below{
 	margin-right: 15px;
 	cursor: pointer;
 }
+
+#overlay {  
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index:5000;
+    background-color:black;
+    opacity: .7;
+ }
+
+.ajax-loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0px 0px -50px;
+    display: block;     
+}

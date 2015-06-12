@@ -6,7 +6,8 @@ app.controller('sliderCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.description = "";
 	$scope.currentIndex = 0;
 	$scope.count = 0;
-
+	$scope.showLoader = false;
+	
 	$http.get("data.json").success(function(response) {
     	$scope.posts = response;
     	$scope.count = response.length;
@@ -15,7 +16,7 @@ app.controller('sliderCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.bindImage = function(index){
     	if($scope.posts[index]){
-	    	$scope.currentImagePath = $scope.posts[index].image;
+	    	$scope.currentImagePath = "images/" + $scope.posts[index].image;
 	    	$scope.caption = $scope.posts[index].headline;
 			$scope.description = $scope.posts[index].body;
     	}
@@ -50,15 +51,23 @@ app.controller('sliderCtrl', ['$scope', '$http', function($scope, $http){
     	}
     });    
 
+    $scope.$watch(function(){ return $scope.currentImagePath;}, function(current, prev){    	
+    	$scope.showLoader = true;
+    });
 }]);
 
 app.directive('fadeIn', function($timeout){
     return {
         restrict: 'A',
+        scope:{
+    		showLoader: "=showLoader"
+        },
         link: function($scope, $element, attrs){
             $element.addClass("ng-hide-remove");
             $element.on('load', function() {
-                $element.addClass("ng-hide-add");
+            	$element.addClass("ng-hide-add");
+                $scope.showLoader = false;
+                $scope.$apply();
             });
         }
     }

@@ -69,12 +69,12 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Portfolio Grid Section -->
+    <!-- Gallery Section -->
     <section id="gallery">
     	<div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                	<img src="images/{{currentImagePath}}" class="img-responsive animate-show" alt="" fade-in>
+                <div class="col-lg-12 text-center">                	
+                	<img ng-src="{{currentImagePath}}" class="img-responsive animate-show" alt="" fade-in show-loader="showLoader">
                 	<a class="left carousel-control" ng-click="prev()">
 					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
@@ -127,16 +127,13 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="http://www.facebook.com/33snaps" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://plus.google.com/102378409609952308824" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="http://www.twitter.com/33snaps" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
@@ -165,6 +162,9 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
+    <div id="overlay" ng-show="showLoader">
+	    <img src="images/loader.gif" class="ajax-loader"/>
+	</div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -187,6 +187,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/bnFadeHelper.js"></script>    
 
 </body>
 
