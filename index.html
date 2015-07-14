@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>33snaps - Photo blog by Ramesh 1</title>
+    <title>33snaps - Photo blog by Ramesh</title>
     <link rel="icon" href="favicon.ico">
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -57,7 +57,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#gallery">Gallery1</a>
+                        <a href="#gallery">Gallery</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 	<h4>{{caption}}</h4>
-                	<span>{{description}}</span>
+                	<span ng-bind-html-unsafe="description"></span>
                 </div>
             </div>
         </div>
