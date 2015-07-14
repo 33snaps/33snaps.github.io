@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngSanitize']);
 app.controller('sliderCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.posts = [];
 	$scope.currentImagePath = "";
